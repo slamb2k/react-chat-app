@@ -45,7 +45,7 @@ const LinkMsg = ({el,menu}) => {
         <Stack spacing={2}>
             <Stack p={2} spacing={3} alignItems='start'
              sx={{backgroundColor:theme.palette.background.paper, borderRadius: 1}}>
-                <img src={el.preview} alt={el.message} style={{maxHeight:210, borderRadius:'10px'}}/>
+                <img src={el.preview} alt={el.message} style={{ maxHeight:210 }} />
                 <Stack spacing={2}>
                     <Typography variant='subtitle2'>Creating Chat App</Typography>
                     <Typography variant='subtitle2' sx={{color:theme.palette.primary.main}} 

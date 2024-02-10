@@ -16,8 +16,8 @@ const GeneralApp = () => {
       {/* Chats */}
       <Chats />
 
-      <Box sx={{ height: '100%', width: sidebar.open ? 'calc(100vw - 740px)': 'calc(100vw - 420px)',
-       backgroundColor: theme.palette.mode === 'light' ? '#F0F4FA' : theme.palette.background.default }}>
+      <Box sx={{ height: '100%', width: sidebar.open ? 'calc(100vw - 840px)': 'calc(100vw - 517px)',
+              backgroundColor: theme.palette.mode === 'light' ? '#F0F4FA' : theme.palette.background.default }}>       
       {/* Conversation */}
       <Conversation/>
       </Box>

@@ -1,12 +1,12 @@
 import React ,{ useState } from 'react';
-import { Avatar, Box, Divider, IconButton, Menu, MenuItem, Stack, Switch } from '@mui/material';
+import { Avatar, Box, Divider, IconButton, Menu, MenuItem, Stack } from '@mui/material';
 import { useTheme } from "@mui/material/styles";
 import { Gear } from "phosphor-react";
 import { Nav_Buttons, Profile_Menu } from '../../data'
 import useSettings from '../../hooks/useSettings';
 import { faker } from '@faker-js/faker';
 import AntSwitch from '../../components/AntSwitch';
-import Logo from '../../assets/Images/logo.ico';
+import Logo from '../../assets/Images/gavin-logo.png';
 import { useNavigate } from 'react-router-dom';
 
 const getPath = (index) =>{
@@ -70,12 +70,12 @@ const SideBar = () => {
         sx={{ width: "100%" , height: "100%"}} spacing={3}>
           <Stack alignItems={"center"} spacing={4}>
           <Box sx={{
-            backgroundColor: theme.palette.primary.main,
+            backgroundColor: theme.palette.divider,
             height: 64,
             width: 64,
             borderRadius: 1.5
           }}>
-            <img src={Logo} alt={'Logo icon'} />
+            <img src={Logo} alt={'Logo icon'} style={{padding:'10px'}} />
           </Box>
           <Stack sx={{ width: "max-content" }} direction="column" alignItems="center" spacing={3}>
             {Nav_Buttons.map((el) => (

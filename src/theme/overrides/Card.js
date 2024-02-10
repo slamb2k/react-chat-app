@@ -2,7 +2,7 @@
 
 export default function Card(theme) {
   return {
-    MuiCard: {
+    MuiCard: { 
       styleOverrides: {
         root: {
           position: 'relative',

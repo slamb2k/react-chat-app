@@ -1,15 +1,14 @@
-import { Avatar, Box, Typography,IconButton, Divider,Stack, } from '@mui/material'
-import { CaretDown, MagnifyingGlass, Phone,VideoCamera } from 'phosphor-react'
+import { Avatar, Box, Typography, Stack } from '@mui/material'
 import React from 'react';
 import { useTheme } from "@mui/material/styles";
-import { faker } from '@faker-js/faker';
-import StyledBadge from '../StyledBadge';
 import { ToggleSidebar } from '../../redux/slices/app';
 import { useDispatch } from 'react-redux';
+import lucasLogo from '../../assets/Images/lucas-group-logo.png';
 
 const Header = () => {
   const dispatch = useDispatch();
   const theme = useTheme();
+
   return (
     <Box p={2} sx={{ width:'100%', backgroundColor: theme.palette.mode === 'light' ? '#F8FAFF' : theme.palette.background.paper, boxShadow:'0px 0px 2px rgba(0,0,0,0.25)'}}>
     <Stack alignItems={'center'} direction='row' justifyContent={'space-between'}
@@ -18,39 +17,27 @@ const Header = () => {
             dispatch(ToggleSidebar());
         }} direction={'row'} spacing={2}>
             <Box>
-                <StyledBadge  overlap="circular"
-                anchorOrigin={{ // position
-                    vertical: "bottom",
-                    horizontal: "right",
-                }}
-                variant="dot">
-                    <Avatar alt={faker.name.fullName()} src={faker.image.avatar()}/>
-                </StyledBadge>
-                
+                <Avatar sx={{ bgcolor: theme.palette.primary.main, color: 'white' }}>L</Avatar>
             </Box>
             <Stack spacing={0.2}>
                     <Typography variant='subtitle2'>
-                        {faker.name.fullName()}
+                        LUCAS
                     </Typography>
                     <Typography variant='caption'>
-                        Online
+                        AI Assistant
                     </Typography>
                 </Stack>
         </Stack>
         <Stack direction='row' alignItems='center' spacing={3}>
-            <IconButton>
-                <VideoCamera/>
-            </IconButton>
-            <IconButton>
-                <Phone/>
-            </IconButton>
-            <IconButton>
+            {/* <IconButton>
                 <MagnifyingGlass/>
             </IconButton>
-            <Divider orientation='vertical' flexItem/>
-            <IconButton>
-                <CaretDown/>
-            </IconButton>
+            <Divider orientation='vertical' flexItem/> */}
+
+            <Box pr={2}>
+                <img src={lucasLogo} alt={'Logo icon'} height={36} />
+            </Box>
+          
         </Stack>
     </Stack>
 </Box>

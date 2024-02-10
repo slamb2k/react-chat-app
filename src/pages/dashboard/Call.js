@@ -5,9 +5,7 @@ import { MagnifyingGlass, Plus } from 'phosphor-react';
 import { useTheme } from "@mui/material/styles";
 import { SimpleBarStyle } from '../../components/Scrollbar';
 import '../../css/global.css';
-import { CallLogs, ChatList } from '../../data';
-import ChatElement from '../../components/ChatElement';
-import CreateGroup from '../../sections/main/CreateGroup';
+import { CallLogs } from '../../data';
 import { CallLogElement } from '../../components/CallElement';
 import StartCall from '../../sections/main/StartCall';
 
@@ -24,7 +22,7 @@ const Call = () => {
      <Stack direction={'row'} sx={{width:'100%'}}>
         {/* Left */}
         <Box sx={{height:'100vh' , 
-        backgroundColor:(theme) =>theme.palette.mode === 'light' ? '#F8FAFF' : theme.palette.background , 
+        backgroundColor:(theme) =>theme.palette.mode === 'light' ? '#F8FAFF' : theme.palette.background.folder , 
         width:320,
         boxShadow:'0px 0px 2px rgba(0,0,0,0.25)'}}>
             <Stack p={3} spacing={2} sx={{maxHeight:'100vh'}}>

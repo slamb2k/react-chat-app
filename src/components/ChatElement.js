@@ -1,9 +1,11 @@
-import { Avatar, Badge, Box, Stack, Typography } from '@mui/material';
-import {useTheme , styled} from '@mui/material/styles';
+import { Avatar, Box, IconButton, Stack, Typography } from '@mui/material';
+import {useTheme} from '@mui/material/styles';
 import StyledBadge from './StyledBadge';
+import {FileXls, Trash} from "phosphor-react";
+import { green } from '@mui/material/colors';
 
 //single chat element
-const ChatElement = ({id,name, img, msg, time,online, unread}) => {
+const ChatElement = ({id,name, img, msg, time, online, unread, pinned}) => {
     const theme = useTheme();
     return (
       <Box sx={{
@@ -16,25 +18,27 @@ const ChatElement = ({id,name, img, msg, time,online, unread}) => {
           <Stack direction='row' spacing={2}>
             {online ? <StyledBadge overlap='circular' anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
               variant="dot">
-            <Avatar src={img} />
-            </StyledBadge> : <Avatar src={img} /> }
+            <Avatar><FileXls /></Avatar>
+            </StyledBadge> : pinned ? <Avatar sx={{ bgcolor: green[900], color: 'white' }}><FileXls /></Avatar> : <Avatar sx={{ bgcolor: theme.palette.primary.main, color: 'white' }}>L</Avatar> }
             
             <Stack spacing={0.3}>
-              <Typography variant='subtitle2'>
-                {name}
-              </Typography>
+              <Stack direction='row' spacing={0}>
+                <Typography variant='subtitle2'>
+                  {name}
+                </Typography>
+              </Stack>
               <Typography variant='caption'>
                 {msg}
               </Typography>
             </Stack>
             </Stack>
-            <Stack spacing={2} alignItems='center'>
-              <Typography sx={{fontWeight:600}} variant='caption'>
-                {time}
-              </Typography>
-              <Badge color='primary' badgeContent={unread}>
+            <Stack spacing={0} alignItems='center'>
+              <IconButton id="chat-delete" size="medium">
+                <Trash/>
+              </IconButton>
+              {/* <Badge color='primary' badgeContent={unread}>
   
-              </Badge>
+              </Badge> */}
             </Stack>
           
           
